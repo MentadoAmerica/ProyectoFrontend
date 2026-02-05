@@ -2,77 +2,96 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registro | Vacunación Infantil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | Sistema de Vacunación Infantil</title>
 </head>
 <body>
 
-    <h2 id="registro">Registro de Padre, Madre o Tutor</h2>
-    <p>
-        Regístrate para llevar el control del esquema de vacunación infantil.
-    </p>
+    <header>
+        <h1>Plataforma de Salud Infantil</h1>
+        <nav>
+            <p>Módulo de Registro de Usuarios</p>
+        </nav>
+    </header>
 
-    <form action="#" method="post">
+    <main>
+        <h2 id="registro">Formulario de Registro: Padre, Madre o Tutor</h2>
+        <p>Complete los siguientes datos para gestionar el esquema de vacunación del menor.</p>
 
-        <h3>Datos del Tutor</h3>
+        <form action="#" method="POST">
 
-        <label for="nombre_tutor">Nombre completo:</label><br>
-        <input type="text" id="nombre_tutor" name="nombre_tutor" required>
-        <br><br>
+            
+                <legend><strong>Datos del Tutor</strong></legend>
+                <br>
+                
+                <label for="nombre_tutor">Nombre completo:</label><br>
+                <input type="text" id="nombre_tutor" name="nombre_tutor" placeholder="Nombre y Apellidos" required>
+                <br><br>
 
-        <label for="correo_tutor">Correo electrónico:</label><br>
-        <input type="email" id="correo_tutor" name="correo_tutor" required>
-        <br><br>
+                <label for="correo_tutor">Correo electrónico:</label><br>
+                <input type="email" id="correo_tutor" name="correo_tutor" placeholder="ejemplo@correo.com" required>
+                <br><br>
 
-        <label for="telefono">Teléfono de contacto:</label><br>
-        <input type="tel" id="telefono" name="telefono" placeholder="10 dígitos">
-        <br><br>
+                <label for="telefono">Teléfono de contacto:</label><br>
+                <input type="tel" id="telefono" name="telefono" placeholder="10 dígitos" pattern="[0-9]{10}">
+                <br><br>
 
-        <label for="password">Crear contraseña:</label><br>
-        <input type="password" id="password" name="password" required>
-        <br><br>
-        <label for="password">Confirmar contraseña:</label><br>
-        <input type="password" id="password" name="password" required>
-        <br><br>
+                <label for="pass">Crear contraseña:</label><br>
+                <input type="password" id="pass" name="pass" minlength="8" required>
+                <br><br>
 
-        <hr>
+                <label for="confirm_pass">Confirmar contraseña:</label><br>
+                <input type="password" id="confirm_pass" name="confirm_pass" required>
+                <br><br>
+            
 
-        <h3>Datos del Niño(a)</h3>
+            <br>
 
-        <label for="nombre_nino">Nombre completo:</label><br>
-        <input type="text" id="nombre_nino" name="nombre_nino" required>
-        <br><br>
+                <legend><strong>Datos del Niño(a)</strong></legend>
+                <br>
 
-        <label for="fecha_nacimiento">Fecha de nacimiento:</label><br>
-        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
-        <br><br>
+                <label for="nombre_nino">Nombre completo del menor:</label><br>
+                <input type="text" id="nombre_nino" name="nombre_nino" placeholder="Nombre del niño/a" required>
+                <br><br>
 
-        <label for="sexo">Sexo:</label><br>
-        <select id="sexo" name="sexo" required>
-            <option value="">Selecciona una opción</option>
-            <option value="femenino">Femenino</option>
-            <option value="masculino">Masculino</option>
-        </select>
-        <br><br>
+                <label for="fecha_nacimiento">Fecha de nacimiento:</label><br>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                <br><br>
 
-        <label for="parentesco">Parentesco con el niño(a):</label><br>
-        <select id="parentesco" name="parentesco" required>
-            <option value="">Selecciona</option>
-            <option value="madre">Madre</option>
-            <option value="padre">Padre</option>
-            <option value="tutor">Tutor(a)</option>
-        </select>
-        <br><br>
+                <label for="sexo">Sexo:</label><br>
+                <select id="sexo" name="sexo" required>
+                    <option value="">-- Selecciona una opción --</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="masculino">Masculino</option>
+                </select>
+                <br><br>
 
-        <input type="checkbox" id="terminos" required>
-        <label for="terminos">
-            Acepto el aviso de privacidad y términos de uso
-        </label>
-        <br><br>
+                <label for="parentesco">Parentesco con el niño(a):</label><br>
+                <select id="parentesco" name="parentesco" required>
+                    <option value="">-- Selecciona --</option>
+                    <option value="madre">Madre</option>
+                    <option value="padre">Padre</option>
+                    <option value="tutor">Tutor legal</option>
+                </select>
+                <br><br>
+           
 
-        <input type="submit" value="Crear cuenta">
+            <br>
 
-    </form>
+            <input type="checkbox" id="terminos" name="terminos" required>
+            <label for="terminos">
+                Acepto el aviso de privacidad y el manejo de datos de salud.
+            </label>
+            <br><br>
 
-    
+            <button type="submit">Crear cuenta</button>
+            <button type="reset">Limpiar formulario</button>
+
+        </form>
+    </main>
+
+    <br>
+   
+
 </body>
 </html>
