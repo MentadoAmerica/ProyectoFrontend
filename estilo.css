@@ -1,0 +1,162 @@
+:root {
+  --fondo:   #FDF6F0;
+  --panel:   #FFFFFF;
+  --azul:    #BDE0FE;
+  --azul2:   #D6F0FA;
+  --rosa:    #FFC8DD;
+  --menta:   #CDEAC0;
+  --lavanda: #E2D5F1;
+  --texto:   #4B5563;
+  --borde:   #E5E7EB;
+  --radius:  16px;
+  --ink:     #111827;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: var(--panel);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+h1, h2, h3 { color: var(--ink); margin-bottom: 15px; }
+
+label { 
+  display: block; 
+  margin-bottom: 5px; 
+  font-weight: 700; 
+  font-size: 0.9rem; 
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  background-color: #f9fafb;
+  font-family: inherit;
+  transition: 0.3s;
+}
+
+legend {
+  font-weight: 800;
+  padding: 0 10px;
+  color: var(--texto);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+footer {
+  padding: 40px 5%;
+  background-color: #1f2937;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bg-soft { background-color: var(--fondo); }
+
+.topbar {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  background: linear-gradient(90deg, var(--azul), var(--azul2));
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 900; }
+.brand .badge {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: #fff; display: grid; place-items: center;
+}
+.brand .badge svg { width: 20px; fill: var(--ink); }
+
+.nav { display: flex; align-items: center; gap: 15px; }
+.nav a { text-decoration: none; color: var(--texto); font-weight: 700; font-size: 14px; }
+
+.hero {
+  height: 500px;
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+    url(https://www.unicef.org/sites/default/files/styles/hero_extended/public/UN0849186.JPG.webp?itok=xJslDGdJ);
+  background-size: cover; background-position: center;
+  display: flex; align-items: center; padding: 0 5%;
+}
+
+.heroBox {
+  max-width: 550px; background: rgba(255, 255, 255, 0.95);
+  padding: 40px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.grid {
+  display: grid; grid-template-columns: 350px 1fr; gap: 40px;
+  max-width: 1200px; margin: 0 auto;
+}
+
+.leftCard {
+  border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--borde); background: #fff;
+}
+.leftCard .img {
+  height: 180px; background: url("https://static.vecteezy.com/system/resources/previews/005/389/725/non_2x/vaccination-of-children-in-the-hospital-illustration-of-a-syringe-and-a-vaccine-prevention-treatment-of-diseases-health-care-and-immunization-vector.jpg");
+  background-size: cover; background-position: center;
+}
+.leftCard .body { padding: 20px; }
+
+.mini {
+  display: flex; align-items: center; gap: 12px; padding: 12px;
+  background: #f8fafc; border-radius: 12px; margin-bottom: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.bicon, .bicon-small { display: grid; place-items: center; background: var(--azul2); border-radius: 10px; }
+.bicon { width: 50px; height: 50px; margin: 0 auto 10px; font-size: 24px; }
+.bicon-small { width: 35px; height: 35px; flex-shrink: 0; }
+
+.benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 25px; }
+.benefit { padding: 20px; background: #f9fafb; border-radius: 20px; text-align: center; border: 1px solid #f1f5f9; }
+
+.form-card {
+  background-color: var(--panel); padding: 40px; border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--borde);
+}
+
+.btn {
+  padding: 12px 24px; border-radius: 999px; font-weight: 800;
+  cursor: pointer; transition: 0.3s; border: 1px solid rgba(0,0,0,0.05);
+  text-decoration: none; display: inline-flex; justify-content: center;
+}
+.btn-primary { background-color: var(--menta) !important; color: var(--ink); }
+.btn-secondary { background-color: var(--lavanda) !important; color: var(--texto); }
+.btn-white { background-color: #fff; color: var(--ink); }
+.btn-block { width: 100%; margin-top: 10px; }
+
+.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+#registro-form { padding: 5px 0; }
+
+#main-title { font-size: 2rem; text-align: center; color: var(--ink); }
+
+#area-privacidad {
+  display: flex; align-items: center; gap: 10px;
+  padding: 15px; background-color: var(--azul2);
+  border-radius: 12px; margin: 20px 0; font-size: 0.85rem;
+}
+
+
+.container { max-width: 700px; margin: 40px auto; padding: 0 20px; }
+.form-row { display: flex; gap: 15px; }
+.form-group { margin-bottom: 15px; flex: 1; }
+.form-section { border: 1.5px solid var(--azul); padding: 20px; border-radius: var(--radius); margin-bottom: 25px; }
+
+@media (max-width: 800px) {
+  .grid, .benefits, .form-row { grid-template-columns: 1fr; flex-direction: column; }
+}
