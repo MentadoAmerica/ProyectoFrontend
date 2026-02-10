@@ -4,94 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro | Sistema de Vacunación Infantil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
 </head>
-<body>
+<body class="bg-soft">
 
-    <header>
-        <h1>Plataforma de Salud Infantil</h1>
-        <nav>
-            <p>Módulo de Registro de Usuarios</p>
+    <header class="topbar">
+        <div class="brand">
+          <div class="badge">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.7-9.5-8.7C.6 9.1 2.3 5.8 5.6 5.1c1.8-.4 3.7.3 4.9 1.7 1.2-1.4 3.1-2.1 4.9-1.7 3.3.7 5 4 3.1 7.2C19 16.3 12 21 12 21z"/></svg>
+          </div>
+          <span>INFA-TIPS</span>
+        </div>
+        <nav class="nav">
+            <a class="btn btn-primary" href="pagina.html">Volver al inicio</a>
         </nav>
     </header>
 
-    <main>
-        <h2 id="registro">Formulario de Registro: Padre, Madre o Tutor</h2>
-        <p>Complete los siguientes datos para gestionar el esquema de vacunación del menor.</p>
+    <main class="container">
+        <section class="form-card">
+            <h2 id="main-title">Formulario de Registro</h2>
+            <p class="subtitle">Complete los siguientes datos para gestionar el esquema de vacunación del menor.</p>
 
-        <form action="#" method="POST">
+            <form id="registro-form" action="#" method="POST">
+                <fieldset class="form-section">
+                    <legend>Datos del Tutor</legend>
+                    <div class="form-group">
+                        <label for="nombre_tutor">Nombre completo:</label>
+                        <input type="text" id="nombre_tutor" name="nombre_tutor" placeholder="Nombre y Apellidos" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="correo_tutor">Correo electrónico:</label>
+                        <input type="email" id="correo_tutor" name="correo_tutor" placeholder="ejemplo@correo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono de contacto:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="10 dígitos" pattern="[0-9]{10}">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pass">Crear contraseña:</label>
+                            <input type="password" id="pass" name="pass" minlength="8" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm_pass">Confirmar contraseña:</label>
+                            <input type="password" id="confirm_pass" name="confirm_pass" required>
+                        </div>
+                    </div>
+                </fieldset>
 
-            
-                <legend><strong>Datos del Tutor</strong></legend>
-                <br>
-                
-                <label for="nombre_tutor">Nombre completo:</label><br>
-                <input type="text" id="nombre_tutor" name="nombre_tutor" placeholder="Nombre y Apellidos" required>
-                <br><br>
+                <fieldset class="form-section">
+                    <legend>Datos del Niño(a)</legend>
+                    <div class="form-group">
+                        <label for="nombre_nino">Nombre completo del menor:</label>
+                        <input type="text" id="nombre_nino" name="nombre_nino" placeholder="Nombre del niño/a" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sexo">Sexo:</label>
+                            <select id="sexo" name="sexo" required>
+                                <option value="">-- Selecciona --</option>
+                                <option value="femenino">Femenino</option>
+                                <option value="masculino">Masculino</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="parentesco">Parentesco con el niño(a):</label>
+                        <select id="parentesco" name="parentesco" required>
+                            <option value="">-- Selecciona --</option>
+                            <option value="madre">Madre</option>
+                            <option value="padre">Padre</option>
+                            <option value="tutor">Tutor legal</option>
+                        </select>
+                    </div>
+                </fieldset>
 
-                <label for="correo_tutor">Correo electrónico:</label><br>
-                <input type="email" id="correo_tutor" name="correo_tutor" placeholder="ejemplo@correo.com" required>
-                <br><br>
+                <div class="checkbox-group" id="area-privacidad">
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    <label for="terminos">Acepto el aviso de privacidad y el manejo de datos de salud.</label>
+                </div>
 
-                <label for="telefono">Teléfono de contacto:</label><br>
-                <input type="tel" id="telefono" name="telefono" placeholder="10 dígitos" pattern="[0-9]{10}">
-                <br><br>
-
-                <label for="pass">Crear contraseña:</label><br>
-                <input type="password" id="pass" name="pass" minlength="8" required>
-                <br><br>
-
-                <label for="confirm_pass">Confirmar contraseña:</label><br>
-                <input type="password" id="confirm_pass" name="confirm_pass" required>
-                <br><br>
-            
-
-            <br>
-
-                <legend><strong>Datos del Niño(a)</strong></legend>
-                <br>
-
-                <label for="nombre_nino">Nombre completo del menor:</label><br>
-                <input type="text" id="nombre_nino" name="nombre_nino" placeholder="Nombre del niño/a" required>
-                <br><br>
-
-                <label for="fecha_nacimiento">Fecha de nacimiento:</label><br>
-                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
-                <br><br>
-
-                <label for="sexo">Sexo:</label><br>
-                <select id="sexo" name="sexo" required>
-                    <option value="">-- Selecciona una opción --</option>
-                    <option value="femenino">Femenino</option>
-                    <option value="masculino">Masculino</option>
-                </select>
-                <br><br>
-
-                <label for="parentesco">Parentesco con el niño(a):</label><br>
-                <select id="parentesco" name="parentesco" required>
-                    <option value="">-- Selecciona --</option>
-                    <option value="madre">Madre</option>
-                    <option value="padre">Padre</option>
-                    <option value="tutor">Tutor legal</option>
-                </select>
-                <br><br>
-           
-
-            <br>
-
-            <input type="checkbox" id="terminos" name="terminos" required>
-            <label for="terminos">
-                Acepto el aviso de privacidad y el manejo de datos de salud.
-            </label>
-            <br><br>
-
-            <button type="submit">Crear cuenta</button>
-            <button type="reset">Limpiar formulario</button>
-
-        </form>
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary btn-block">Crear cuenta</button>
+                    <button type="reset" class="btn btn-secondary btn-block">Limpiar</button>
+                </div>
+            </form>
+        </section>
     </main>
 
-    <br>
-   
-
+    <footer class="footer">
+        <div class="footer-links">
+          <a href="#">Privacidad</a>
+          <a href="#">Preguntas Frecuentes</a>
+        </div>
+        <div>
+          <strong>© 2026 INFA-TIPS</strong>
+        </div>
+    </footer>
 </body>
 </html>
