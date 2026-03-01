@@ -1,0 +1,177 @@
+
+        .body-login {
+            background: linear-gradient(135deg, #0dcaf0 0%, #0d6efd 100%);
+            min-height: 100vh;
+        }
+        
+        .login-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .login-header {
+            background: linear-gradient(135deg, #0dcaf0, #0d6efd);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .login-header i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .login-body {
+            padding: 2.5rem;
+        }
+        
+        .form-control:focus {
+            border-color: #0dcaf0;
+            box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
+        }
+        
+        .btn-login {
+            background: linear-gradient(135deg, #0dcaf0, #0d6efd);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 12px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+        }
+        
+        .register-link {
+            color: #0d6efd;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .register-link:hover {
+            color: #0dcaf0;
+        }
+        
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #6c757d;
+        }
+        
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .divider::before {
+            margin-right: 1rem;
+        }
+        
+        .divider::after {
+            margin-left: 1rem;
+        }
+
+
+
+                .body-registro {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            font-family: 'Nunito', sans-serif;
+        }
+        
+        .register-card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .register-header {
+            background: linear-gradient(135deg, #0dcaf0, #0d6efd);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .section-title {
+            color: #0dcaf0;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-left: 4px solid #0dcaf0;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: #495057;
+            font-size: 0.9rem;
+        }
+        
+        .form-control, .form-select {
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 10px 15px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: #0dcaf0;
+            box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
+        }
+        
+        .btn-register {
+            background: linear-gradient(135deg, #0dcaf0, #0d6efd);
+            border: none;
+            color: white;
+            font-weight: 700;
+            padding: 12px 30px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(13, 110, 253, 0.3);
+        }
+        
+        .btn-reset {
+            background: #e9ecef;
+            border: 2px solid #dee2e6;
+            color: #495057;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 10px;
+        }
+        
+        .btn-reset:hover {
+            background: #dee2e6;
+        }
+        
+        .checkbox-custom {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            accent-color: #0dcaf0;
+        }
+        
+        .footer-link {
+            color: #6c757d;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-link:hover {
+            color: #0dcaf0;
+        }
+
+
+
+        

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | INFA-TIPS</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+</head>
+
+<body class="body-registro">
+
+    <!-- HEADER con navbar Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="home.html">
+                <span class="badge bg-white text-info me-2">💙</span>
+                INFA-TIPS
+            </a>
+            
+            <div class="ms-auto">
+                <a href="home.html" class="btn btn-light text-info fw-bold rounded-pill">
+                    <i class="fas fa-arrow-left me-2"></i>Volver al inicio
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                
+                <!-- Tarjeta de registro -->
+                <div class="card register-card">
+                    
+                    <!-- Header decorativo -->
+                    <div class="register-header text-center">
+                        <i class="fas fa-child fa-3x mb-3"></i>
+                        <h2 class="fw-bold">Crear cuenta</h2>
+                        <p class="mb-0 opacity-75">Registra los datos del tutor y del menor</p>
+                    </div>
+                    
+                    <!-- Cuerpo del formulario -->
+                    <div class="card-body p-4 p-lg-5">
+                        
+                        <form id="registro-form" action="main.html" method="get">
+                            
+                            <!-- SECCIÓN 1: Datos del Tutor -->
+                            <div class="mb-4">
+                                <h3 class="section-title">
+                                    <i class="fas fa-user me-2"></i>Datos del Tutor
+                                </h3>
+                                
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <label class="form-label">Nombre completo del tutor</label>
+                                        <input type="text" class="form-control" placeholder="Ej: Juan Pérez González" required>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label class="form-label">Correo electrónico</label>
+                                        <input type="email" class="form-control" placeholder="ejemplo@correo.com" required>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label class="form-label">Teléfono de contacto</label>
+                                        <input type="tel" class="form-control" placeholder="5512345678" pattern="[0-9]{10}">
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label class="form-label">Contraseña</label>
+                                        <input type="password" class="form-control" placeholder="Mínimo 8 caracteres" minlength="8" required>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label class="form-label">Confirmar contraseña</label>
+                                        <input type="password" class="form-control" placeholder="Repite tu contraseña" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- SECCIÓN 2: Datos del Niño -->
+                            <div class="mb-4">
+                                <h3 class="section-title">
+                                    <i class="fas fa-baby me-2"></i>Datos del Niño(a)
+                                </h3>
+                                
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <label class="form-label">Nombre completo del menor</label>
+                                        <input type="text" class="form-control" placeholder="Ej: Sofía Pérez López" required>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label class="form-label">Fecha de nacimiento</label>
+                                        <input type="date" class="form-control" required>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label class="form-label">Sexo</label>
+                                        <select class="form-select" required>
+                                            <option value="">-- Selecciona --</option>
+                                            <option value="femenino">Femenino</option>
+                                            <option value="masculino">Masculino</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label class="form-label">Parentesco</label>
+                                        <select class="form-select" required>
+                                            <option value="">-- Selecciona --</option>
+                                            <option value="madre">Madre</option>
+                                            <option value="padre">Padre</option>
+                                            <option value="tutor">Tutor legal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Checkbox de privacidad -->
+                            <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="terminos" required>
+                                    <label class="form-check-label" for="terminos">
+                                        Acepto el <a href="#" class="text-info">aviso de privacidad</a> y el manejo de datos de salud.
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Botones de acción -->
+                            <div class="d-flex gap-3">
+                                <button type="submit" class="btn btn-register flex-grow-1">
+                                    <i class="fas fa-user-plus me-2"></i>Crear cuenta
+                                </button>
+                                <button type="reset" class="btn btn-reset">
+                                    <i class="fas fa-eraser me-2"></i>Limpiar
+                                </button>
+                            </div>
+                            
+                            <!-- Enlace a login -->
+                            <div class="text-center mt-4">
+                                <p class="mb-0">
+                                    ¿Ya tienes cuenta? 
+                                    <a href="login.html" class="text-info fw-bold text-decoration-none">
+                                        Inicia sesión <i class="fas fa-arrow-right ms-1"></i>
+                                    </a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER profesional -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <a href="#" class="text-white-50 text-decoration-none me-3">Privacidad</a>
+                    <a href="#" class="text-white-50 text-decoration-none">Preguntas Frecuentes</a>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <strong>© 2026 INFA-TIPS</strong>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Validación simple de contraseñas -->
+    <script>
+        document.getElementById('registro-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.querySelector('input[type="password"]').value;
+            const confirmPass = document.querySelectorAll('input[type="password"]')[1].value;
+            
+            if (password !== confirmPass) {
+                alert('Las contraseñas no coinciden');
+                return;
+            }
+            
+            window.location.href = 'main.html';
+        });
+    </script>
+</body>
+</html>
