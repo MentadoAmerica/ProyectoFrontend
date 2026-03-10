@@ -160,3 +160,4 @@ footer {
 @media (max-width: 800px) {
   .grid, .benefits, .form-row { grid-template-columns: 1fr; flex-direction: column; }
 }
+

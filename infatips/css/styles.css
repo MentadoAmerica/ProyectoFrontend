@@ -174,6 +174,203 @@ html {
         .footer-link:hover {
             color: #0dcaf0;
         }
+        
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    padding-top: 80px;
+}
+
+/* Navbar personalizada (igual que home) */
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Sidebar para escritorio */
+.dashboard-sidebar {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    padding: 1.5rem;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #0dcaf0, #0d6efd);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #6c757d;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Tarjetas de hijos */
+.child-card {
+    background: linear-gradient(135deg, #d63384, #dc3545);
+    border-radius: 20px;
+    padding: 1.5rem;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.child-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.child-avatar {
+    width: 70px;
+    height: 70px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    border: 3px solid rgba(255,255,255,0.3);
+}
+
+/* Items del calendario */
+.calendar-item {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.calendar-item:last-child {
+    border-bottom: none;
+}
+
+.calendar-item:hover {
+    background: #f8f9fa;
+}
+
+.calendar-date {
+    min-width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #0dcaf0, #0d6efd);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+}
+
+.calendar-day {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.calendar-month {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Estado de vacunas */
+.vaccine-status {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.status-completed {
+    background: #d1e7dd;
+    color: #198754;
+}
+
+.status-completed::before {
+    content: "✓";
+    font-weight: bold;
+}
+
+.status-upcoming {
+    background: #fff3cd;
+    color: #ffc107;
+}
+
+.status-upcoming::before {
+    content: "⏰";
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    .stat-card {
+        margin-bottom: 1rem;
+    }
+    
+    .child-card {
+        margin-bottom: 1rem;
+    }
+    
+    .calendar-date {
+        min-width: 60px;
+        height: 60px;
+    }
+    
+    .calendar-day {
+        font-size: 1.2rem;
+    }
+}
 
 
 

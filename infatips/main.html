@@ -13,264 +13,11 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa;
-            padding-top: 80px;
-        }
-        
-        /* Navbar personalizada (igual que home) */
-        .navbar-brand {
-            font-size: 1.5rem;
-        }
-        
-        .nav-link {
-            font-weight: 500;
-            padding: 0.5rem 1rem !important;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            background: rgba(255,255,255,0.2);
-        }
-        
-        /* Sidebar para escritorio */
-        .dashboard-sidebar {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            padding: 1.5rem;
-            height: fit-content;
-            position: sticky;
-            top: 100px;
-        }
-        
-        .sidebar-item {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            border-radius: 12px;
-            color: #495057;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            margin-bottom: 0.5rem;
-        }
-        
-        .sidebar-item i {
-            width: 24px;
-            margin-right: 12px;
-            color: #0dcaf0;
-        }
-        
-        .sidebar-item:hover, .sidebar-item.active {
-            background: linear-gradient(135deg, #0dcaf0, #0d6efd);
-            color: white;
-            transform: translateX(5px);
-        }
-        
-        .sidebar-item:hover i, .sidebar-item.active i {
-            color: white;
-        }
-        
-        /* Tarjetas de estadísticas */
-        .stat-card {
-            background: white;
-            border: none;
-            border-radius: 20px;
-            padding: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #0dcaf0, #0d6efd);
-            opacity: 0.1;
-            border-radius: 50%;
-            transform: translate(30px, -30px);
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(13, 202, 240, 0.15);
-        }
-        
-        .stat-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #0dcaf0, #0d6efd);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .stat-icon i {
-            font-size: 2rem;
-            color: white;
-        }
-        
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #212529;
-            margin-bottom: 0.2rem;
-        }
-        
-        .stat-label {
-            color: #6c757d;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-        
-        /* Tarjetas de vacunas (igual que home pero adaptadas) */
-        .vaccine-card {
-            background: white;
-            border: none;
-            border-radius: 15px;
-            padding: 1.2rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-            transition: all 0.3s ease;
-            border-left: 4px solid #0dcaf0;
-        }
-        
-        .vaccine-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 10px 30px rgba(13, 202, 240, 0.1);
-        }
-        
-        .vaccine-status {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 8px;
-        }
-        
-        .status-completed {
-            background: #198754;
-            box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.2);
-        }
-        
-        .status-pending {
-            background: #ffc107;
-            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
-        }
-        
-        .status-upcoming {
-            background: #0dcaf0;
-            box-shadow: 0 0 0 3px rgba(13, 202, 240, 0.2);
-        }
-        
-        /* Tarjeta de hijo */
-        .child-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 20px;
-            padding: 1.5rem;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .child-card::before {
-            content: '👶';
-            font-size: 8rem;
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            opacity: 0.2;
-            transform: rotate(10deg);
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .child-card > * {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .child-avatar {
-            width: 70px;
-            height: 70px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            border: 3px solid rgba(255,255,255,0.3);
-        }
-        
-        /* Calendario */
-        .calendar-item {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            border-bottom: 1px solid #e9ecef;
-            transition: all 0.3s ease;
-        }
-        
-        .calendar-item:hover {
-            background: #f8f9fa;
-            transform: scale(1.02);
-        }
-        
-        .calendar-date {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #0dcaf0, #0d6efd);
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            margin-right: 1rem;
-        }
-        
-        .calendar-day {
-            font-size: 1.5rem;
-            font-weight: 800;
-            line-height: 1;
-        }
-        
-        .calendar-month {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            opacity: 0.9;
-        }
-        
-        /* Badges personalizados */
-        .badge-age {
-            background: #e7f5ff;
-            color: #0dcaf0;
-            font-weight: 600;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-        }
-        
-        /* Footer igual que home */
-        footer {
-            margin-top: 4rem;
-        }
-    </style>
-</head>
-<body class="body-main">
 
-    <!-- ========== NAVBAR (idéntica a home.html) ========== -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-info shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center" href="main.html">
@@ -308,9 +55,8 @@
                         </a>
                     </li>
                     
-                    <!-- Perfil de usuario -->
                     <li class="nav-item ms-lg-3 dropdown">
-                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#perfil" role="button" data-bs-toggle="dropdown">
                             <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" 
                                  width="40" height="40" class="rounded-circle border-2 border-white me-2" alt="Perfil">
                             <span class="d-none d-lg-inline text-white">María G.</span>
@@ -327,10 +73,8 @@
         </div>
     </nav>
 
-    <!-- ========== MAIN CONTENT ========== -->
     <main class="container py-4" id="inicio">
         
-        <!-- Bienvenida personalizada -->
         <div class="row mb-4 align-items-center">
             <div class="col-md-8">
                 <h2 class="fw-bold mb-2">
@@ -352,7 +96,6 @@
             </div>
         </div>
 
-        <!-- ========== SECCIÓN DE ESTADÍSTICAS ========== -->
         <div class="row g-4 mb-5">
             <div class="col-sm-6 col-lg-3">
                 <div class="stat-card">
@@ -408,7 +151,6 @@
             </div>
         </div>
 
-        <!-- ========== SECCIÓN DE HIJOS (similar a cards del home) ========== -->
         <div class="row mb-5" id="hijos">
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -507,7 +249,6 @@
             </div>
         </div>
 
-        <!-- ========== SECCIÓN DE PRÓXIMAS VACUNAS (similar a cards) ========== -->
         <div class="row mb-5" id="proximas">
             <div class="col-lg-8">
                 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -617,7 +358,6 @@
             </div>
         </div>
 
-        <!-- ========== SECCIÓN DE RECOMENDACIONES (inspirada en especialidades) ========== -->
         <div class="row mb-5" id="recomendaciones">
             <div class="col-12">
                 <h3 class="fw-bold mb-4">
@@ -661,7 +401,6 @@
         </div>
     </main>
 
-    <!-- ========== MODAL DE RECORDATORIOS ========== -->
     <div class="modal fade" id="recordatorioModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -704,7 +443,6 @@
         </div>
     </div>
 
-    <!-- ========== FOOTER (idéntico a home.html) ========== -->
     <footer class="bg-dark text-white py-5">
         <div class="container">
             <div class="row g-4 justify-content-between">
