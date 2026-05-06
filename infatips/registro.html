@@ -14,10 +14,16 @@
     
 </head>
 
-<body class="body-registro">
+<body class="body-registro d-flex align-items-center">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-info shadow-sm">
-        <div class="container">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-9">
+                
+                <div class="card register-card">
+                    
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-info shadow-sm">
+        <div class="container-fluid">
             <a class="navbar-brand fw-bold d-flex align-items-center" href="home.html">
                 <span class="badge bg-white text-info me-2">💙</span>
                 INFA-TIPS
@@ -25,17 +31,11 @@
             
             <div class="ms-auto">
                 <a href="home.html" class="btn btn-light text-info fw-bold rounded-pill">
-                    <i class="fas fa-arrow-left me-2"></i>Volver al inicio
+                    <i class="fas fa-arrow-left me-2"></i>Volver
                 </a>
             </div>
         </div>
     </nav>
-
-    <main class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-8">
-                
-                <div class="card register-card">
                     
                     <div class="register-header text-center">
                         <i class="fas fa-child fa-3x mb-3"></i>
@@ -43,7 +43,18 @@
                         <p class="mb-0 opacity-75">Registra los datos del tutor y del menor</p>
                     </div>
                     
-                    <div class="card-body p-4 p-lg-5">
+                    <div class="register-body p-4 p-lg-5">
+                        
+                        <!-- Barra de Progreso -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <small class="text-muted">Progreso del formulario</small>
+                                <small class="text-muted"><span id="progress-percent">0</span>%</small>
+                            </div>
+                            <div class="progress" style="height: 6px;">
+                                <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                            </div>
+                        </div>
                         
                         <form id="registro-form" action="main.html" method="get">
                             
@@ -54,28 +65,86 @@
                                 
                                 <div class="row g-3">
                                     <div class="col-12">
-                                        <label class="form-label">Nombre completo del tutor</label>
-                                        <input type="text" class="form-control" placeholder="Ej: Juan Pérez González" required>
+                                        <label class="form-label">Nombre completo del tutor <span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-input" placeholder="Ej: Juan Pérez González" 
+                                                pattern="[A-Za-záéíóúñ\s]{3,}" 
+                                                title="Mínimo 3 caracteres, solo letras y espacios"
+                                                autocomplete="name"
+                                                maxlength="100"
+                                                required>
+                                            <span class="input-icon"><i class="fas fa-check"></i></span>
+                                        </div>
+                                        <small class="form-text text-danger d-none error-message"></small>
                                     </div>
                                     
                                     <div class="col-md-6">
-                                        <label class="form-label">Correo electrónico</label>
-                                        <input type="email" class="form-control" placeholder="ejemplo@correo.com" required>
+                                        <label class="form-label">Correo electrónico <span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <input type="email" class="form-control form-input" placeholder="ejemplo@correo.com" 
+                                                autocomplete="email"
+                                                maxlength="100"
+                                                title="Ingresa un correo válido"
+                                                required>
+                                            <span class="input-icon"><i class="fas fa-check"></i></span>
+                                        </div>
+                                        <small class="form-text text-danger d-none error-message"></small>
                                     </div>
                                     
                                     <div class="col-md-6">
-                                        <label class="form-label">Teléfono de contacto</label>
-                                        <input type="tel" class="form-control" placeholder="5512345678" pattern="[0-9]{10}">
+                                        <label class="form-label">Teléfono de contacto <span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <input type="tel" class="form-control form-input" placeholder="5512345678" 
+                                                pattern="[0-9]{10}"
+                                                title="Ingresa 10 dígitos sin espacios"
+                                                inputmode="numeric"
+                                                maxlength="10"
+                                                autocomplete="tel"
+                                                required>
+                                            <span class="input-icon"><i class="fas fa-check"></i></span>
+                                        </div>
+                                        <small class="form-text text-danger d-none error-message"></small>
                                     </div>
                                     
                                     <div class="col-md-6">
-                                        <label class="form-label">Contraseña</label>
-                                        <input type="password" class="form-control" placeholder="Mínimo 8 caracteres" minlength="8" required>
+                                        <label class="form-label">Contraseña <span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control form-input password-input" placeholder="Mínimo 8 caracteres" 
+                                                minlength="8"
+                                                maxlength="50"
+                                                pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
+                                                title="Debe contener mayúscula, minúscula, número y carácter especial (@$!%*?&)"
+                                                autocomplete="new-password"
+                                                required>
+                                            <button class="btn btn-outline-secondary toggle-password" type="button" title="Ver contraseña">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <span class="input-icon"><i class="fas fa-check"></i></span>
+                                        </div>
+                                        <small class="form-text text-danger d-none error-message"></small>
+                                        <div class="mt-2">
+                                            <small class="text-muted">Fortaleza:</small>
+                                            <div class="password-strength">
+                                                <div class="strength-bar"></div>
+                                                <span class="strength-text text-muted">Débil</span>
+                                            </div>
+                                        </div>
                                     </div>
                                     
                                     <div class="col-md-6">
-                                        <label class="form-label">Confirmar contraseña</label>
-                                        <input type="password" class="form-control" placeholder="Repite tu contraseña" required>
+                                        <label class="form-label">Confirmar contraseña <span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control form-input password-confirm" placeholder="Repite tu contraseña" 
+                                                minlength="8"
+                                                maxlength="50"
+                                                autocomplete="new-password"
+                                                required>
+                                            <button class="btn btn-outline-secondary toggle-password" type="button" title="Ver contraseña">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <span class="input-icon"><i class="fas fa-check"></i></span>
+                                        </div>
+                                        <small class="form-text text-danger d-none error-message"></small>
                                     </div>
                                 </div>
                             </div>
@@ -87,32 +156,78 @@
                                 
                                 <div class="row g-3">
                                     <div class="col-12">
-                                        <label class="form-label">Nombre completo del menor</label>
-                                        <input type="text" class="form-control" placeholder="Ej: Sofía Pérez López" required>
+                                        <label class="form-label">Nombre completo del menor <span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-input" placeholder="Ej: Sofía Pérez López" 
+                                                pattern="[A-Za-záéíóúñ\s]{3,}"
+                                                title="Mínimo 3 caracteres, solo letras y espacios"
+                                                autocomplete="given-name"
+                                                maxlength="100"
+                                                required>
+                                            <span class="input-icon"><i class="fas fa-check"></i></span>
+                                        </div>
+                                        <small class="form-text text-danger d-none error-message"></small>
                                     </div>
                                     
                                     <div class="col-md-6">
-                                        <label class="form-label">Fecha de nacimiento</label>
-                                        <input type="date" class="form-control" required>
+                                        <label class="form-label">Fecha de nacimiento <span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <input type="date" class="form-control form-input" 
+                                                min="1990-01-01"
+                                                autocomplete="bday"
+                                                required>
+                                            <span class="input-icon"><i class="fas fa-check"></i></span>
+                                        </div>
+                                        <small class="form-text text-danger d-none error-message"></small>
                                     </div>
                                     
                                     <div class="col-md-6">
-                                        <label class="form-label">Sexo</label>
-                                        <select class="form-select" required>
+                                        <label class="form-label">Edad</label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control form-input" placeholder="Ej: 5" 
+                                                min="0"
+                                                max="17"
+                                                title="La edad debe estar entre 0 y 17 años"
+                                                readonly>
+                                            <span class="input-icon"><i class="fas fa-check"></i></span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label class="form-label">Sexo <span class="text-danger">*</span></label>
+                                        <select class="form-select form-input" required>
                                             <option value="">-- Selecciona --</option>
                                             <option value="femenino">Femenino</option>
                                             <option value="masculino">Masculino</option>
+                                            <option value="otro">Otro</option>
                                         </select>
+                                        <small class="form-text text-danger d-none error-message"></small>
                                     </div>
                                     
                                     <div class="col-md-6">
-                                        <label class="form-label">Parentesco</label>
-                                        <select class="form-select" required>
+                                        <label class="form-label">Parentesco <span class="text-danger">*</span></label>
+                                        <select class="form-select form-input" required>
                                             <option value="">-- Selecciona --</option>
                                             <option value="madre">Madre</option>
                                             <option value="padre">Padre</option>
                                             <option value="tutor">Tutor legal</option>
+                                            <option value="abuelo">Abuelo(a)</option>
+                                            <option value="otro">Otro</option>
                                         </select>
+                                        <small class="form-text text-danger d-none error-message"></small>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label class="form-label">Foto del menor (opcional)</label>
+                                        <div class="input-group">
+                                            <input type="file" class="form-control form-input" 
+                                                accept="image/png,image/jpeg,image/jpg,image/webp"
+                                                title="Solo se aceptan imágenes (PNG, JPEG, WEBP)"
+                                                aria-describedby="fotoHelp">
+                                            <span class="input-icon"><i class="fas fa-check"></i></span>
+                                        </div>
+                                        <small id="fotoHelp" class="form-text text-muted d-block mt-1">Máximo 5MB. Formatos: PNG, JPEG, WEBP</small>
+                                        <small class="form-text text-danger d-none error-message"></small>
                                     </div>
                                 </div>
                             </div>
@@ -127,8 +242,8 @@
                             </div>
                             
                             <div class="d-flex gap-3">
-                                <button type="submit" class="btn btn-register flex-grow-1">
-                                    <i class="fas fa-user-plus me-2"></i>Crear cuenta
+                                <button type="submit" class="btn btn-register flex-grow-1" id="submit-btn">
+                                    <i class="fas fa-user-plus me-2"></i><span>Crear cuenta</span>
                                 </button>
                                 <button type="reset" class="btn btn-reset">
                                     <i class="fas fa-eraser me-2"></i>Limpiar
@@ -148,41 +263,12 @@
                 </div>
             </div>
         </div>
-    </main>
-
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <a href="https://www.gob.mx/aviso_de_privacidad" target="_blank" class="text-white-50 text-decoration-none me-3">Privacidad</a>
-                    <a href="https://www.gob.mx/salud/censia/acciones-y-programas/preguntas-frecuentes-vacunacion-132499" target="_blank" class="text-white-50 text-decoration-none">
-                        Preguntas Frecuentes</a>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <strong>© 2026 INFA-TIPS</strong>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Validación simple de contraseñas -->
-    <script>
-        document.getElementById('registro-form')?.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const password = document.querySelector('input[type="password"]').value;
-            const confirmPass = document.querySelectorAll('input[type="password"]')[1].value;
-            
-            if (password !== confirmPass) {
-                alert('Las contraseñas no coinciden');
-                return;
-            }
-            
-            window.location.href = 'main.html';
-        });
-    </script>
+    <!-- Validación del formulario (archivo externo) -->
+    <script src="js/validacion.js"></script>
 </body>
 </html>
